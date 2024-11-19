@@ -1,10 +1,10 @@
 import React from "react";
 import Navbar from "./components/navbar.js";
-import About from "./components/About/about.js";
-import Experience from "./components/Experience/experience.js";
-import Education from "./components/Education/education.js";
-import Skills from "./components/Skills/skills.js";
-import Interests from "./components/Interests/interests.js";
+import About from "./components/about.js";
+import Experience from "./components/experience.js";
+import Education from "./components/education.js";
+import Skills from "./components/skills.js";
+import Interests from "./components/interests.js";
 
 const App = () => {
   return (
