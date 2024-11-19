@@ -28,10 +28,10 @@ const About = () => {
           peluang kerja di masa depan!
         </p>
         <div className="social-icons">
-          <a className="social-icon" href="#!">
+          <a className="social-icon" href="https://github.com/settings/profile">
             <i className="fab fa-github"></i>
           </a>
-          <a className="social-icon" href="#!">
+          <a className="social-icon" href="https://x.com/YMokolensa24708">
             <i className="fab fa-twitter"></i>
           </a>
           <a className="social-icon" href="#!">
