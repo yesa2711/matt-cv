@@ -1,5 +1,5 @@
 import React from "react";
-import profilePhoto from "./assets/img/profile.jpeg";
+import profilePhoto from "../assets/img/profile.jpeg"; // Periksa path-nya dengan benar!
 
 const Navbar = () => {
   return (
