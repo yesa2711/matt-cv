@@ -1,6 +1,6 @@
 import React from "react";
 
-const skills = () => {
+const Skills = () => {
   return (
     <section className="resume-section" id="skills">
       <div className="resume-section-content">
@@ -29,4 +29,4 @@ const skills = () => {
   );
 };
 
-export default skills;
+export default Skills;

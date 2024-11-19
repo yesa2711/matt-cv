@@ -1,6 +1,6 @@
 import React from "react";
 
-const education = () => {
+const Education = () => {
   return (
     <section className="resume-section" id="education">
       <div className="resume-section-content">
@@ -22,4 +22,4 @@ const education = () => {
   );
 };
 
-export default education;
+export default Education;
