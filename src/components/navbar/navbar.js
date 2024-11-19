@@ -1,5 +1,4 @@
 import React from "react";
-import profilePhoto from "../assets/img/profile.jpeg"; // Periksa path-nya dengan benar!
 
 const Navbar = () => {
   return (
@@ -12,7 +11,7 @@ const Navbar = () => {
         <span className="d-none d-lg-block">
           <img
             className="img-fluid img-profile rounded-circle mx-auto mb-2"
-            src={profilePhoto}
+            src="/img/profile.jpeg" // Path ke file gambar di folder public
             alt="Profile"
           />
         </span>
