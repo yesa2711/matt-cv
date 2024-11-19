@@ -17,12 +17,32 @@ const Skills = () => {
             <i className="fab fa-js-square"></i>
           </li>
           <li className="list-inline-item">
+            <i className="fab fa-angular"></i>
+          </li>
+          <li className="list-inline-item">
             <i className="fab fa-react"></i>
           </li>
           <li className="list-inline-item">
             <i className="fab fa-node-js"></i>
           </li>
-          {/* Tambahkan ikon lainnya jika diperlukan */}
+          <li className="list-inline-item">
+            <i className="fab fa-sass"></i>
+          </li>
+          <li className="list-inline-item">
+            <i className="fab fa-less"></i>
+          </li>
+          <li className="list-inline-item">
+            <i className="fab fa-wordpress"></i>
+          </li>
+          <li className="list-inline-item">
+            <i className="fab fa-gulp"></i>
+          </li>
+          <li className="list-inline-item">
+            <i className="fab fa-grunt"></i>
+          </li>
+          <li className="list-inline-item">
+            <i className="fab fa-npm"></i>
+          </li>
         </ul>
       </div>
     </section>
