@@ -1,6 +1,19 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { getDatabase, ref, onValue } from "firebase/database";
+import firebaseApp from "../firebase/firebaseConfig";
 
 const Navbar = () => {
+  const [navbar, setNavbar] = useState({});
+
+  useEffect(() => {
+    const db = getDatabase(firebaseApp); // Gunakan firebaseApp untuk inisialisasi
+    const navbarRef = ref(db, "navbar");
+
+    onValue(navbarRef, (snapshot) => {
+      const data = snapshot.val();
+      setNavbar(data || {}); // Pastikan data tidak null
+    });
+  }, []);
   return (
     <nav
       className="navbar navbar-expand-lg navbar-dark bg-primary fixed-top"
@@ -31,27 +44,27 @@ const Navbar = () => {
         <ul className="navbar-nav">
           <li className="nav-item">
             <a className="nav-link js-scroll-trigger" href="#about">
-              About
+              {navbar.navbar1}
             </a>
           </li>
           <li className="nav-item">
             <a className="nav-link js-scroll-trigger" href="#experience">
-              Experience
+              {navbar.navbar2}
             </a>
           </li>
           <li className="nav-item">
             <a className="nav-link js-scroll-trigger" href="#education">
-              Education
+              {navbar.navbar3}
             </a>
           </li>
           <li className="nav-item">
             <a className="nav-link js-scroll-trigger" href="#skills">
-              Skills
+              {navbar.navbar4}
             </a>
           </li>
           <li className="nav-item">
             <a className="nav-link js-scroll-trigger" href="#interests">
-              Interests
+              {navbar.navbar5}
             </a>
           </li>
         </ul>
