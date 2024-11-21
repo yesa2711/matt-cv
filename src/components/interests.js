@@ -1,24 +1,24 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { getDatabase, ref, onValue } from "firebase/database";
+import firebaseApp from "../firebase/firebaseConfig";
 
 const Interests = () => {
+  const [interests, setInterests] = useState({});
+
+  useEffect(() => {
+    const db = getDatabase(firebaseApp); // Gunakan firebaseApp untuk inisialisasi
+    const interestsRef = ref(db, "interests");
+
+    onValue(interestsRef, (snapshot) => {
+      const data = snapshot.val();
+      setInterests(data || {}); // Pastikan data tidak null
+    });
+  }, []);
   return (
     <section className="resume-section" id="interests">
       <div className="resume-section-content">
-        <h2 className="mb-5">Interests</h2>
-        <p>
-          Saya sangat tertarik dengan bagaimana teknologi dapat mengubah cara
-          kita hidup dan bekerja. Dunia pemrograman, khususnya dalam
-          pengembangan perangkat lunak dan aplikasi web, membuka peluang tak
-          terbatas untuk menciptakan solusi yang berdampak. Saya selalu merasa
-          terinspirasi oleh tantangan untuk memecahkan masalah melalui kode dan
-          berusaha untuk terus mengasah keterampilan saya dalam menciptakan
-          produk yang tidak hanya fungsional tetapi juga user-friendly. Dengan
-          rasa ingin tahu yang tinggi, saya terus menggali berbagai teknologi
-          baru, mengasah kemampuan dalam desain antarmuka, dan berusaha
-          menciptakan pengalaman digital yang menyenangkan. Teknologi bukan
-          hanya pekerjaan bagi saya, tetapi juga hasrat yang saya jalani setiap
-          hari.
-        </p>
+        <h2 className="mb-5">{interests.intersts1}</h2>
+        <p>{interests.intersts2}</p>
       </div>
     </section>
   );

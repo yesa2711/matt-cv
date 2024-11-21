@@ -1,12 +1,25 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { getDatabase, ref, onValue } from "firebase/database";
+import firebaseApp from "../firebase/firebaseConfig";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 
 const Skills = () => {
+  const [skills, setSkills] = useState({});
+
+  useEffect(() => {
+    const db = getDatabase(firebaseApp); // Gunakan firebaseApp untuk inisialisasi
+    const SkillsRef = ref(db, "skills");
+
+    onValue(SkillsRef, (snapshot) => {
+      const data = snapshot.val();
+      setSkills(data || {}); // Pastikan data tidak null
+    });
+  }, []);
   return (
     <section className="resume-section" id="skills">
       <div className="resume-section-content">
-        <h2 className="mb-5">Skills</h2>
-        <div className="subheading mb-3">Programming Languages & Tools</div>
+        <h2 className="mb-5">{skills.skills1}</h2>
+        <div className="subheading mb-3">{skills.skills2}</div>
         <ul className="list-inline dev-icons">
           <li className="list-inline-item">
             <i className="fab fa-html5"></i>
@@ -45,31 +58,31 @@ const Skills = () => {
             <i className="fab fa-npm"></i>
           </li>
         </ul>
-        <div className="subheading mb-3">Workflow</div>
+        <div className="subheading mb-3">{skills.skills3}</div>
         <ul className="fa-ul mb-0">
           <li>
             <span className="fa-li">
               <i className="fas fa-check"></i>
             </span>
-            Mobile-First, Responsive Design
+            {skills.skills4}
           </li>
           <li>
             <span className="fa-li">
               <i className="fas fa-check"></i>
             </span>
-            Cross Browser Testing & Debugging
+            {skills.skills5}
           </li>
           <li>
             <span className="fa-li">
               <i className="fas fa-check"></i>
             </span>
-            Cross Functional Teams
+            {skills.skills6}
           </li>
           <li>
             <span className="fa-li">
               <i className="fas fa-check"></i>
             </span>
-            Agile Development & Scrum
+            {skills.skills7}
           </li>
         </ul>
       </div>

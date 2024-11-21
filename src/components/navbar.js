@@ -59,12 +59,12 @@ const Navbar = () => {
           </li>
           <li className="nav-item">
             <a className="nav-link js-scroll-trigger" href="#skills">
-              {navbar.navbar4}
+              {navbar.navbar5}
             </a>
           </li>
           <li className="nav-item">
             <a className="nav-link js-scroll-trigger" href="#interests">
-              {navbar.navbar5}
+              {navbar.navbar4}
             </a>
           </li>
         </ul>
